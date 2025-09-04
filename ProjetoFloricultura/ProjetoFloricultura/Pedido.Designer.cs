@@ -61,7 +61,6 @@
             this.cmbEscolheBuque.Size = new System.Drawing.Size(200, 21);
             this.cmbEscolheBuque.TabIndex = 0;
             this.cmbEscolheBuque.Text = "Escolher Buquê";
-        
             // 
             // grpOpcionais
             // 
@@ -111,7 +110,7 @@
             // 
             this.lblValorBuque.AutoSize = true;
             this.lblValorBuque.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorBuque.Location = new System.Drawing.Point(315, 73);
+            this.lblValorBuque.Location = new System.Drawing.Point(279, 73);
             this.lblValorBuque.Name = "lblValorBuque";
             this.lblValorBuque.Size = new System.Drawing.Size(114, 16);
             this.lblValorBuque.TabIndex = 2;
@@ -119,16 +118,16 @@
             // 
             // txtValorBuque
             // 
-            this.txtValorBuque.Location = new System.Drawing.Point(318, 102);
+            this.txtValorBuque.Location = new System.Drawing.Point(253, 102);
             this.txtValorBuque.Name = "txtValorBuque";
-            this.txtValorBuque.Size = new System.Drawing.Size(100, 20);
+            this.txtValorBuque.Size = new System.Drawing.Size(165, 20);
             this.txtValorBuque.TabIndex = 3;
             // 
             // txtValorOpcionais
             // 
-            this.txtValorOpcionais.Location = new System.Drawing.Point(465, 101);
+            this.txtValorOpcionais.Location = new System.Drawing.Point(441, 101);
             this.txtValorOpcionais.Name = "txtValorOpcionais";
-            this.txtValorOpcionais.Size = new System.Drawing.Size(100, 20);
+            this.txtValorOpcionais.Size = new System.Drawing.Size(168, 20);
             this.txtValorOpcionais.TabIndex = 4;
             // 
             // lblValorOpcionais
@@ -143,16 +142,16 @@
             // 
             // txtValorPagar
             // 
-            this.txtValorPagar.Location = new System.Drawing.Point(607, 102);
+            this.txtValorPagar.Location = new System.Drawing.Point(632, 102);
             this.txtValorPagar.Name = "txtValorPagar";
-            this.txtValorPagar.Size = new System.Drawing.Size(100, 20);
+            this.txtValorPagar.Size = new System.Drawing.Size(156, 20);
             this.txtValorPagar.TabIndex = 6;
             // 
             // lblValorPagar
             // 
             this.lblValorPagar.AutoSize = true;
             this.lblValorPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorPagar.Location = new System.Drawing.Point(609, 73);
+            this.lblValorPagar.Location = new System.Drawing.Point(659, 73);
             this.lblValorPagar.Name = "lblValorPagar";
             this.lblValorPagar.Size = new System.Drawing.Size(103, 16);
             this.lblValorPagar.TabIndex = 7;
@@ -197,9 +196,9 @@
             // dgvPedido
             // 
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPedido.Location = new System.Drawing.Point(318, 205);
+            this.dgvPedido.Location = new System.Drawing.Point(253, 205);
             this.dgvPedido.Name = "dgvPedido";
-            this.dgvPedido.Size = new System.Drawing.Size(389, 150);
+            this.dgvPedido.Size = new System.Drawing.Size(535, 150);
             this.dgvPedido.TabIndex = 12;
             this.dgvPedido.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvPedido_MouseDoubleClick);
             // 
@@ -251,6 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnCalcular);
