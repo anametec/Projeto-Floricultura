@@ -1,5 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Data;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq.Expressions;
 using System.Windows.Forms;
 
 namespace ProjetoFloricultura
@@ -24,10 +27,7 @@ namespace ProjetoFloricultura
             cmbEscolheBuque.SelectedIndex = 0;
         }
 
-        private void cmbEscolheBuque_SelectedIndexChanged(object sender, System.EventArgs e)
-        {
-
-        }
+     
 
         private void Pedido_Load(object sender, System.EventArgs e)
         {
@@ -39,11 +39,11 @@ namespace ProjetoFloricultura
         private void btnCalcular_Click(object sender, System.EventArgs e)
         {
             double valorBuque = 0, valorOpcao = 0, valorTotal = 0;
-            if(cmbEscolheBuque.SelectedIndex == 0)
+            if (cmbEscolheBuque.SelectedIndex == 0)
             {
                 valorBuque = 100;
             }
-            else if(cmbEscolheBuque.SelectedIndex == 1)
+            else if (cmbEscolheBuque.SelectedIndex == 1)
             {
                 valorBuque = 180;
             }
@@ -51,25 +51,26 @@ namespace ProjetoFloricultura
             {
                 valorBuque = 270;
             }
-            if(chkPelucia.Checked == true)
+            if (chkPelucia.Checked == true)
             {
-                valorOpcao = +30;
+                valorOpcao = valorOpcao + 30;
             }
-            if(chkCartao.Checked == true)
+            if (chkCartao.Checked == true)
             {
-                valorOpcao = +10;
+                valorOpcao = valorOpcao + 10;
             }
-            if(chkBombons.Checked == true)
+            if (chkBombons.Checked == true)
             {
-                valorOpcao = +40;
+                valorOpcao = valorOpcao + 40;
             }
             else
             {
-                valorTotal = valorBuque + valorOpcao;
-                txtValorBuque.Text = Convert.ToString(valorBuque);
-                txtValorOpcionais.Text = Convert.ToString(valorOpcao);
-                txtValorPagar.Text = Convert.ToString(valorTotal);
+                MessageBox.Show("Pedido calculado com sucesso");  
             }
+            valorTotal = valorBuque + valorOpcao;
+            txtValorBuque.Text = Convert.ToString(valorBuque);
+            txtValorOpcionais.Text = Convert.ToString(valorOpcao);
+            txtValorPagar.Text = Convert.ToString(valorTotal);
         }
 
         private void grpOpcionais_Enter(object sender, EventArgs e)
@@ -84,7 +85,7 @@ namespace ProjetoFloricultura
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if(txtValorBuque.Text == "")
+            if (txtValorBuque.Text == "")
             {
                 MessageBox.Show("Campo obrigatório");
                 txtValorOpcionais.Focus();
@@ -93,6 +94,11 @@ namespace ProjetoFloricultura
             {
                 MessageBox.Show("Campo obrigatório");
                 txtValorOpcionais.Focus();
+            }
+            else if (txtValorPagar.Text == "")
+                {
+                MessageBox.Show("Campo obrigatório");
+                txtValorPagar.Focus();
             }
             else
             {
@@ -115,11 +121,77 @@ namespace ProjetoFloricultura
                     con.DesConnectarBD();
                 }
 
-                catch(Exception erro)
+                catch (Exception erro)
                 {
                     MessageBox.Show(erro.Message);
                 }
             }
         }
+
+        private void dgvPedido_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            CarregarPedido();
+        }
+
+        public void CarregarPedido()
+        {
+            try
+            {
+                txtCodigo.Text = dgvPedido.SelectedRows[0].Cells[0].Value.ToString();
+                cmbEscolheBuque.Text = dgvPedido.SelectedRows[0].Cells[1].Value.ToString();
+                txtValorBuque.Text = dgvPedido.SelectedRows[0].Cells[2].Value.ToString();
+                txtValorOpcionais.Text = dgvPedido.SelectedRows[0].Cells[3].Value.ToString();
+                txtValorPagar.Text = dgvPedido.SelectedRows[0].Cells[4].Value.ToString();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Erros ao clicar" + error);
+            }
+        }
+
+        private void txtPesquisar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPesquisar.Text != "")
+            {
+                try
+                {
+                    con.ConnectarBD();
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.CommandText = "select * from tbPedido";
+
+                    cmd.Connection = con.ConnectarBD();
+                    MySqlDataAdapter da = new MySqlDataAdapter();
+                    DataTable dt = new DataTable();
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+                    dgvPedido.DataSource = dt;
+                    con.DesConnectarBD();
+                }
+
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
+            else
+            {
+                dgvPedido.DataSource = null;
+            }
+            }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            DialogResult sair = MessageBox.Show("Deseja sair?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (sair == DialogResult.No)
+            {
+                Pedido ped = new Pedido();
+                ped.Show();
+                this.Hide();
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
     }
-}
+    }

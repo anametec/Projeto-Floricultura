@@ -16,7 +16,7 @@ namespace ProjetoFloricultura
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Floricultura());
+            Application.Run(new Pedido());
         }
     }
 }

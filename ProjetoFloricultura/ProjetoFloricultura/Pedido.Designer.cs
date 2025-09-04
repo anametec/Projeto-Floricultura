@@ -61,7 +61,7 @@
             this.cmbEscolheBuque.Size = new System.Drawing.Size(200, 21);
             this.cmbEscolheBuque.TabIndex = 0;
             this.cmbEscolheBuque.Text = "Escolher Buquê";
-            this.cmbEscolheBuque.SelectedIndexChanged += new System.EventHandler(this.cmbEscolheBuque_SelectedIndexChanged);
+        
             // 
             // grpOpcionais
             // 
@@ -182,6 +182,7 @@
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(100, 20);
             this.txtPesquisar.TabIndex = 10;
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
             // 
             // lblPesquisar
             // 
@@ -200,6 +201,7 @@
             this.dgvPedido.Name = "dgvPedido";
             this.dgvPedido.Size = new System.Drawing.Size(389, 150);
             this.dgvPedido.TabIndex = 12;
+            this.dgvPedido.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvPedido_MouseDoubleClick);
             // 
             // btnNovo
             // 
@@ -243,6 +245,7 @@
             this.btnSair.TabIndex = 16;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // Pedido
             // 
