@@ -250,7 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Crimson;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnCalcular);
@@ -270,6 +270,7 @@
             this.Controls.Add(this.grpOpcionais);
             this.Controls.Add(this.cmbEscolheBuque);
             this.Name = "Pedido";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedido";
             this.Load += new System.EventHandler(this.Pedido_Load);
             this.grpOpcionais.ResumeLayout(false);
