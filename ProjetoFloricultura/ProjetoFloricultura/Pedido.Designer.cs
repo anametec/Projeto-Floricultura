@@ -30,9 +30,9 @@
         {
             this.cmbEscolheBuque = new System.Windows.Forms.ComboBox();
             this.grpOpcionais = new System.Windows.Forms.GroupBox();
-            this.chkCartao = new System.Windows.Forms.CheckBox();
-            this.chkPelucia = new System.Windows.Forms.CheckBox();
             this.chkBombons = new System.Windows.Forms.CheckBox();
+            this.chkPelucia = new System.Windows.Forms.CheckBox();
+            this.chkCartao = new System.Windows.Forms.CheckBox();
             this.lblValorBuque = new System.Windows.Forms.Label();
             this.txtValorBuque = new System.Windows.Forms.TextBox();
             this.txtValorOpcionais = new System.Windows.Forms.TextBox();
@@ -54,61 +54,66 @@
             // 
             // cmbEscolheBuque
             // 
+            this.cmbEscolheBuque.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEscolheBuque.FormattingEnabled = true;
             this.cmbEscolheBuque.Location = new System.Drawing.Point(27, 101);
             this.cmbEscolheBuque.Name = "cmbEscolheBuque";
             this.cmbEscolheBuque.Size = new System.Drawing.Size(200, 21);
             this.cmbEscolheBuque.TabIndex = 0;
             this.cmbEscolheBuque.Text = "Escolher Buquê";
+            this.cmbEscolheBuque.SelectedIndexChanged += new System.EventHandler(this.cmbEscolheBuque_SelectedIndexChanged);
             // 
             // grpOpcionais
             // 
             this.grpOpcionais.Controls.Add(this.chkBombons);
             this.grpOpcionais.Controls.Add(this.chkPelucia);
             this.grpOpcionais.Controls.Add(this.chkCartao);
+            this.grpOpcionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpOpcionais.Location = new System.Drawing.Point(27, 153);
             this.grpOpcionais.Name = "grpOpcionais";
-            this.grpOpcionais.Size = new System.Drawing.Size(200, 100);
+            this.grpOpcionais.Size = new System.Drawing.Size(200, 202);
             this.grpOpcionais.TabIndex = 1;
             this.grpOpcionais.TabStop = false;
             this.grpOpcionais.Text = "Escolhas Opcionais";
-            // 
-            // chkCartao
-            // 
-            this.chkCartao.AutoSize = true;
-            this.chkCartao.Location = new System.Drawing.Point(6, 19);
-            this.chkCartao.Name = "chkCartao";
-            this.chkCartao.Size = new System.Drawing.Size(101, 17);
-            this.chkCartao.TabIndex = 0;
-            this.chkCartao.Text = "Cartão R$10,00";
-            this.chkCartao.UseVisualStyleBackColor = true;
-            // 
-            // chkPelucia
-            // 
-            this.chkPelucia.AutoSize = true;
-            this.chkPelucia.Location = new System.Drawing.Point(6, 42);
-            this.chkPelucia.Name = "chkPelucia";
-            this.chkPelucia.Size = new System.Drawing.Size(105, 17);
-            this.chkPelucia.TabIndex = 1;
-            this.chkPelucia.Text = "Pelúcia R$30,00";
-            this.chkPelucia.UseVisualStyleBackColor = true;
+            this.grpOpcionais.Enter += new System.EventHandler(this.grpOpcionais_Enter);
             // 
             // chkBombons
             // 
             this.chkBombons.AutoSize = true;
-            this.chkBombons.Location = new System.Drawing.Point(6, 65);
+            this.chkBombons.Location = new System.Drawing.Point(6, 162);
             this.chkBombons.Name = "chkBombons";
-            this.chkBombons.Size = new System.Drawing.Size(114, 17);
+            this.chkBombons.Size = new System.Drawing.Size(129, 17);
             this.chkBombons.TabIndex = 2;
             this.chkBombons.Text = "Bombons R$40,00";
             this.chkBombons.UseVisualStyleBackColor = true;
             // 
+            // chkPelucia
+            // 
+            this.chkPelucia.AutoSize = true;
+            this.chkPelucia.Location = new System.Drawing.Point(6, 105);
+            this.chkPelucia.Name = "chkPelucia";
+            this.chkPelucia.Size = new System.Drawing.Size(120, 17);
+            this.chkPelucia.TabIndex = 1;
+            this.chkPelucia.Text = "Pelúcia R$30,00";
+            this.chkPelucia.UseVisualStyleBackColor = true;
+            // 
+            // chkCartao
+            // 
+            this.chkCartao.AutoSize = true;
+            this.chkCartao.Location = new System.Drawing.Point(6, 52);
+            this.chkCartao.Name = "chkCartao";
+            this.chkCartao.Size = new System.Drawing.Size(115, 17);
+            this.chkCartao.TabIndex = 0;
+            this.chkCartao.Text = "Cartão R$10,00";
+            this.chkCartao.UseVisualStyleBackColor = true;
+            // 
             // lblValorBuque
             // 
             this.lblValorBuque.AutoSize = true;
-            this.lblValorBuque.Location = new System.Drawing.Point(327, 75);
+            this.lblValorBuque.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorBuque.Location = new System.Drawing.Point(315, 73);
             this.lblValorBuque.Name = "lblValorBuque";
-            this.lblValorBuque.Size = new System.Drawing.Size(80, 13);
+            this.lblValorBuque.Size = new System.Drawing.Size(114, 16);
             this.lblValorBuque.TabIndex = 2;
             this.lblValorBuque.Text = "Valor do Buquê";
             // 
@@ -129,9 +134,10 @@
             // lblValorOpcionais
             // 
             this.lblValorOpcionais.AutoSize = true;
-            this.lblValorOpcionais.Location = new System.Drawing.Point(464, 75);
+            this.lblValorOpcionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorOpcionais.Location = new System.Drawing.Point(452, 73);
             this.lblValorOpcionais.Name = "lblValorOpcionais";
-            this.lblValorOpcionais.Size = new System.Drawing.Size(101, 13);
+            this.lblValorOpcionais.Size = new System.Drawing.Size(148, 16);
             this.lblValorOpcionais.TabIndex = 5;
             this.lblValorOpcionais.Text = "Valor dos Opcionais";
             // 
@@ -145,32 +151,34 @@
             // lblValorPagar
             // 
             this.lblValorPagar.AutoSize = true;
-            this.lblValorPagar.Location = new System.Drawing.Point(621, 75);
+            this.lblValorPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorPagar.Location = new System.Drawing.Point(609, 73);
             this.lblValorPagar.Name = "lblValorPagar";
-            this.lblValorPagar.Size = new System.Drawing.Size(71, 13);
+            this.lblValorPagar.Size = new System.Drawing.Size(103, 16);
             this.lblValorPagar.TabIndex = 7;
             this.lblValorPagar.Text = "Valor a Pagar";
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(315, 153);
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(315, 154);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(40, 13);
+            this.lblCodigo.Size = new System.Drawing.Size(57, 16);
             this.lblCodigo.TabIndex = 8;
             this.lblCodigo.Text = "Código";
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(361, 150);
+            this.txtCodigo.Location = new System.Drawing.Point(378, 150);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(111, 20);
             this.txtCodigo.TabIndex = 9;
             // 
             // txtPesquisar
             // 
-            this.txtPesquisar.Location = new System.Drawing.Point(556, 150);
+            this.txtPesquisar.Location = new System.Drawing.Point(607, 150);
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(100, 20);
             this.txtPesquisar.TabIndex = 10;
@@ -178,9 +186,10 @@
             // lblPesquisar
             // 
             this.lblPesquisar.AutoSize = true;
-            this.lblPesquisar.Location = new System.Drawing.Point(494, 153);
+            this.lblPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesquisar.Location = new System.Drawing.Point(519, 153);
             this.lblPesquisar.Name = "lblPesquisar";
-            this.lblPesquisar.Size = new System.Drawing.Size(56, 13);
+            this.lblPesquisar.Size = new System.Drawing.Size(81, 16);
             this.lblPesquisar.TabIndex = 11;
             this.lblPesquisar.Text = "Pesquisar:";
             // 
@@ -194,41 +203,48 @@
             // 
             // btnNovo
             // 
+            this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovo.Location = new System.Drawing.Point(318, 381);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(75, 23);
+            this.btnNovo.Size = new System.Drawing.Size(75, 36);
             this.btnNovo.TabIndex = 13;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnSalvar
             // 
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Location = new System.Drawing.Point(423, 381);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.Size = new System.Drawing.Size(75, 36);
             this.btnSalvar.TabIndex = 14;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCalcular
             // 
+            this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalcular.Location = new System.Drawing.Point(534, 381);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(75, 23);
+            this.btnCalcular.Size = new System.Drawing.Size(75, 36);
             this.btnCalcular.TabIndex = 15;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // btnSair
             // 
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.Location = new System.Drawing.Point(632, 381);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(75, 23);
+            this.btnSair.Size = new System.Drawing.Size(75, 36);
             this.btnSair.TabIndex = 16;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             // 
-            // Floricultura
+            // Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -250,8 +266,9 @@
             this.Controls.Add(this.lblValorBuque);
             this.Controls.Add(this.grpOpcionais);
             this.Controls.Add(this.cmbEscolheBuque);
-            this.Name = "Floricultura";
+            this.Name = "Pedido";
             this.Text = "Pedido";
+            this.Load += new System.EventHandler(this.Pedido_Load);
             this.grpOpcionais.ResumeLayout(false);
             this.grpOpcionais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
