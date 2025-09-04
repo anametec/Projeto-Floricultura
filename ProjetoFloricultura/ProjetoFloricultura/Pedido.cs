@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace ProjetoFloricultura
 {
-    public partial class Floricultura : Form
+    public partial class Pedido : Form
     {
-        public Floricultura()
+        Conexao con = new Conexao();
+        public Pedido()
         {
             InitializeComponent();
         }

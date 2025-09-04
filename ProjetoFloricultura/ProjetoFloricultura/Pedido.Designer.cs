@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFloricultura
 {
-    partial class Floricultura
+    partial class Pedido
     {
         /// <summary>
         /// Required designer variable.
@@ -251,7 +251,7 @@
             this.Controls.Add(this.grpOpcionais);
             this.Controls.Add(this.cmbEscolheBuque);
             this.Name = "Floricultura";
-            this.Text = "Floricultura";
+            this.Text = "Pedido";
             this.grpOpcionais.ResumeLayout(false);
             this.grpOpcionais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
